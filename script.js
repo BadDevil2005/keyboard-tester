@@ -340,6 +340,23 @@ window.addEventListener('keydown', (event) => {
  }
 })
 
+document.addEventListener('keydown', function(event) {
+  // Check if the pressed key is a function key (F1 - F12)
+  if (event.key.startsWith('F')) {
+      // Prevent the default action (like refreshing the page)
+      event.preventDefault();
+      
+      // Show the green light
+      const light = document.getElementById('light');
+      light.classList.add('active');
+      
+      // Optional: Remove the green light after a short delay
+      setTimeout(() => {
+          light.classList.remove('active');
+      }, 1000);
+  }
+});
+
 window.addEventListener('resize', ()=> {
   var viewport_width = document.documentElement.clientWidth;
   if(viewport_width < 600) {
@@ -350,4 +367,5 @@ window.addEventListener('resize', ()=> {
   else {
     document.querySelector('body').display = 'inline-block';
   }
+  
 })
