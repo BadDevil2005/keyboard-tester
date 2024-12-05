@@ -168,3 +168,7 @@ body {
     transform: scale(1);
   }
 }
+.active {
+  background-color: green; /* Change this to your desired green color */
+  color: white; /* Optional: Change text color for better visibility */
+}

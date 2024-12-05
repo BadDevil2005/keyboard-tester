@@ -373,7 +373,36 @@ document.addEventListener('keydown', function(event) {
       prtscKey.classList.add('active');
   }
 });
+document.addEventListener('keydown', function(event) {
+  const fnKey = document.getElementById('fn-key');
+  const prtscKey = document.getElementById('prtsc-key');
 
+  // Check if the pressed key is the "Fn" key
+  if (event.key === 'Fn') {
+      fnKey.classList.add('active'); // Add active class to show green color
+      event.preventDefault(); // Prevent default behavior
+  }
+
+  // Check if the pressed key is the "PrintScreen" key
+  if (event.key === 'PrintScreen') {
+      event.preventDefault(); // Prevent default behavior
+      prtscKey.classList.add('active'); // Add active class to show green color
+  }
+});
+
+// Optional: Remove the active class after a short delay
+document.addEventListener('keyup', function(event) {
+  const fnKey = document.getElementById('fn-key');
+  const prtscKey = document.getElementById('prtsc-key');
+
+  if (event.key === 'Fn') {
+      fnKey.classList.remove('active'); // Remove active class when key is released
+  }
+
+  if (event.key === 'PrintScreen') {
+      prtscKey.classList.remove('active'); // Remove active class when key is released
+  }
+});
     
 window.addEventListener('resize', ()=> {
   var viewport_width = document.documentElement.clientWidth;
