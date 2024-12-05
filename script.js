@@ -356,7 +356,25 @@ document.addEventListener('keydown', function(event) {
       }, 1000);
   }
 });
+document.addEventListener('keydown', function(event) {
+  const fnKey = document.getElementById('fn-key');
+  const prtscKey = document.getElementById('prtsc-key');
 
+  // Check if the pressed key is the "Fn" key
+  if (event.key === 'Fn') {
+      // Since we can't detect the Fn key, we can simulate its activation
+      fnKey.classList.add('active');
+      event.preventDefault(); // Prevent default behavior
+  }
+
+  // Check if the pressed key is the "PrintScreen" key
+  if (event.key === 'PrintScreen') {
+      event.preventDefault(); // Prevent default behavior
+      prtscKey.classList.add('active');
+  }
+});
+
+    
 window.addEventListener('resize', ()=> {
   var viewport_width = document.documentElement.clientWidth;
   if(viewport_width < 600) {
