@@ -348,10 +348,10 @@ document.addEventListener('keydown', function(event) {
       
       // Show the green light
       const light = document.getElementById('light');
-      light.classList.add('active');
+      // light.classList.add('active');
       
       // Optional: Remove the green light after a short delay
-      setTimeout(() => {
+          setTimeout(() => {
           light.classList.remove('active');
       }, 1000);
   }
